@@ -88,7 +88,7 @@ sap.ui.define([
 			var bodyJson = {
 				"method": "REGISTER",
 				"link": window.location.href,
-				"templateName": "ESPM",
+				"templateName": "ESPMNoBackend",
 				"parameters": {
 					"ID1": oObject.SupplierId
 				},
@@ -387,7 +387,7 @@ sap.ui.define([
 				var bodyJson = {
 					"method": "DELETE",
 					"link": window.location.href,
-					"templateName": "ESPM",
+					"templateName": "ESPMNoBackend",
 					"parameters": {
 						"ID1": oObject.SupplierId
 					},

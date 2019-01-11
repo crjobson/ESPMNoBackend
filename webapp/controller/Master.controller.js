@@ -256,7 +256,7 @@ sap.ui.define([
 				var url = "/mobileservices/origin/hcpms/CARDS/v1/register/templated";
 				var bodyJson = {
 					"method": "LIST",
-					"templateName": "ESPM",
+					"templateName": "ESPMNoBackend",
 					"username": sUsername
 				};
 
@@ -312,7 +312,7 @@ sap.ui.define([
 							// delete from C2G
 							bodyJson = {
 								"method": "DELETE",
-								"templateName": "ESPM",
+								"templateName": "ESPMNoBackend",
 								"parameters": oCard.parameters,
 								"username": sUsername
 							};
@@ -340,7 +340,7 @@ sap.ui.define([
 							bodyJson = {
 								"link": window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search + "#/Suppliers/" + oCard.SupplierId,
 								"method": "REGISTER",
-								"templateName": "ESPM",
+								"templateName": "ESPMNoBackend",
 								"parameters": oCard.parameters,
 								"username": sUsername
 							};
@@ -394,7 +394,7 @@ sap.ui.define([
 			var url = "/mobileservices/origin/hcpms/CARDS/v1/register/templated";
 			var bodyJson = {
 				"method": "DELETEALL",
-				"templateName": "ESPM",
+				"templateName": "ESPMNoBackend",
 				"username": sUsername
 			};
 
