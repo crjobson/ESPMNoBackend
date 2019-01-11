@@ -1,0 +1,51 @@
+<mvc:View controllerName="sap.espm.controller.CreateEntity" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:smart="sap.ui.comp.smartfield" xmlns="sap.m">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" title="{viewModel>/viewTitle}" busy="{viewModel>/busy}">
+		<semantic:content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" id="newEntitySimpleForm"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024"
+				title="{= ${viewModel>/mode} === 'edit'? 'Edit ESPM.Supplier': 'New ESPM.Supplier'}">
+				<f:content>
+					<Label text="City" required="false"/>
+					<Input name="City" id="City_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'City', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40 } }"/>
+					<Label text="Country" required="false"/>
+					<Input name="Country" id="Country_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'Country', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:3 } }"/>
+					<Label text="EmailAddress" required="false"/>
+					<Input name="EmailAddress" id="EmailAddress_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'EmailAddress', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:255 } }"/>
+					<Label text="HouseNumber" required="false"/>
+					<Input name="HouseNumber" id="HouseNumber_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'HouseNumber', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:10 } }"/>
+					<Label text="PhoneNumber" required="false"/>
+					<Input name="PhoneNumber" id="PhoneNumber_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'PhoneNumber', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:30 } }"/>
+					<Label text="PostalCode" required="false"/>
+					<Input name="PostalCode" id="PostalCode_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'PostalCode', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:10 } }"/>
+					<Label text="Street" required="false"/>
+					<Input name="Street" id="Street_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'Street', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:60 } }"/>
+					<Label text="SupplierId" required="true"/>
+					<Input name="SupplierId" id="SupplierId_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement"
+						enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="true"
+						value="{ path: 'SupplierId', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:10, nullable:false } }"/>
+					<Label text="SupplierName" required="false"/>
+					<Input name="SupplierName" id="SupplierName_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'SupplierName', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:80 } }"/>
+					<Label text="UpdatedTimestamp" required="false"/>
+					<DatePicker name="UpdatedTimestamp" value="{ path: 'UpdatedTimestamp', type: 'sap.ui.model.type.DateTime'}" id="UpdatedTimestamp_id"
+						type="DateTime" enabled="true" visible="true"/>
+				</f:content>
+			</f:SimpleForm>
+		</semantic:content>
+		<semantic:saveAction>
+			<semantic:SaveAction id="save" enabled="{viewModel>/enableCreate}" press="onSave"/>
+		</semantic:saveAction>
+		<semantic:cancelAction>
+			<semantic:CancelAction id="cancel" press="onCancel"></semantic:CancelAction>
+		</semantic:cancelAction>
+	</semantic:DetailPage>
+</mvc:View>
