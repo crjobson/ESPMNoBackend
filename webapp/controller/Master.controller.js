@@ -338,7 +338,7 @@ sap.ui.define([
 						} if (oCard.Status === "New") {
 							// add to C2G
 							bodyJson = {
-								"link": window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search + "#/Suppliers/" + oCard.SupplierId,
+								"link": window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search + "#/Suppliers/" + oCard.parameters.ID1,
 								"method": "REGISTER",
 								"templateName": "ESPMNoBackend",
 								"parameters": oCard.parameters,
